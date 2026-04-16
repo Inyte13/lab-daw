@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Destino Turístico</title>
+    <link rel="stylesheet" href="styleRegionUnica.css">
+    <script src="region.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <a href="index.html" class="back-button">← Volver al Inicio</a>
+            <span class="logo" id="titulo">Turismo Perú</span>
+        </div>
+        <nav class="main-nav">
+            <a href="#" id="btnInfoCiudad"> Información de Ciudad</a>
+            <a href="#" id="btnBuses"> Buses</a>
+            <a href="#" id="btnLugares"> Lugares Turísticos</a>
+            <a href="#" id="btnGastronomia"> Gastronomía</a>
+            <a href="#" id="btnHistoria"> Historia</a>
+            <a href="#" id="btnReserva"> Reservar visita</a>
+        </div>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 id="titulo2">Cargando...</h1>
+            <p>Descubre todo lo que este destino tiene para ofrecerte</p>
+        </div>
+    </main>
+
+    <section class="content-section" id="contentArea">
+        <!-- aqui el contenido dinámico -->
+    </section>
+
+    <h1>Sonidos del Perú</h1>
+
+   
+    <iframe 
+    data-testid="embed-iframe" 
+    style="border-radius:12px" 
+    src="https://open.spotify.com/embed/playlist/1086E4bqCytqITxOzkFXFE?utm_source=generator" 
+    width="100%" 
+    height="352" 
+    frameBorder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy"></iframe>
+
+    <!-- Mapa de la región -->
+     <h1>Ubicación</h1>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <div id="map" style="height: 400px;"></div> 
+
+    <footer>
+        <p>&copy; 2025 Mi proyecto-UNSA. Todos los derechos reservados.</p>
+    </footer>
+    <div id="overlayReserva" class="menu-overlay">
+    <div class="contenido-menu">
+        <h2>Reserva tu visita</h2>
+
+        <input type="date" id="fechaVisita">
+
+        <br><br>
+
+        <button onclick="confirmarReserva()">Confirmar reserva</button>
+        <button onclick="cerrarOverlay('overlayReserva')">Cancelar</button>
+    </div>
+    </div>
+</body>
+</html>
