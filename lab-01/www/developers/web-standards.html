@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estándar W3C - Accesibilidad Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Estándar W3C: WCAG</h1>
+        <p>Garantizando una web para todas las personas.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="webstandards.html">Estándares</a>
+        <a href="contact.html">Contacto</a>
+    </nav>
+
+    <main id="contenedor-estandar">
+        <section>
+            <h2>Pautas de Accesibilidad (WCAG)</h2>
+            <p>Las WCAG son el estándar de la W3C que define cómo hacer el contenido web más accesible para personas con discapacidad (visual, auditiva, motriz, etc.).</p>
+        </section>
+
+        <article>
+            <h3>Principios clave</h3>
+            <ul>
+                <li><strong>Perceptible:</strong> La información debe ser fácil de ver o escuchar.</li>
+                <li><strong>Operable:</strong> La navegación debe funcionar incluso solo con teclado.</li>
+            </ul>
+        </article>
+
+        <section class="caja-interactiva">
+            <h3>Área de Prueba DOM</h3>
+            <p id="mensaje-js">Haz clic en los botones para cambiar este texto y su entorno.</p>
+            <div class="botones">
+                <button id="btn-color">Cambiar Color</button>
+                <button id="btn-fondo">Modo Lectura</button>
+                <button id="btn-reset">Restaurar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Laboratorio DAW - Sección de Estándares Web</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
