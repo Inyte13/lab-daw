@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const region = params.get("region");
 
   if (region) {
-    fetch("regiones.json")
+    fetch("./regiones.json")
       .then((res) => res.json())
       .then((data) => {
         const info = data[region];

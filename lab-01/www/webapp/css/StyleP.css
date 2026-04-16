@@ -216,25 +216,25 @@ nav a:hover {
   height: 0;
   overflow: hidden;
   background:
-    url("imagenes/peru1.jpg") no-repeat,
-    url("imagenes/peru2.jpg") no-repeat,
-    url("imagenes/peru3.jpg") no-repeat,
-    url("imagenes/peru4.jpg") no-repeat,
-    url("imagenes/peru5.jpg") no-repeat,
-    url("imagenes/peru6.jpg") no-repeat,
-    url("imagenes/peru10.jpg") no-repeat,
-    url("imagenes/peru11.jpg") no-repeat;
+    url("../img/peru1.jpg") no-repeat,
+    url("../img/peru2.jpg") no-repeat,
+    url("../img/peru3.jpg") no-repeat,
+    url("../img/peru4.jpg") no-repeat,
+    url("../img/peru5.jpg") no-repeat,
+    url("../img/peru6.jpg") no-repeat,
+    url("../img/peru10.jpg") no-repeat,
+    url("../img/peru11.jpg") no-repeat;
 }
 @keyframes cambioFondo {
-  0%   { background-image: url("imagenes/peru1.jpg"); }
-  12%  { background-image: url("imagenes/peru2.jpg"); }
-  24%  { background-image: url("imagenes/peru3.jpg"); }
-  36%  { background-image: url("imagenes/peru4.jpg"); }
-  48%  { background-image: url("imagenes/peru5.jpg"); }
-  60%  { background-image: url("imagenes/peru6.jpg"); }
-  72%  { background-image: url("imagenes/peru10.jpg"); }
-  84%  { background-image: url("imagenes/peru11.jpg"); }
-  100% { background-image: url("imagenes/peru1.jpg"); }
+  0%   { background-image: url("../img/peru1.jpg"); }
+  12%  { background-image: url("../img/peru2.jpg"); }
+  24%  { background-image: url("../img/peru3.jpg"); }
+  36%  { background-image: url("../img/peru4.jpg"); }
+  48%  { background-image: url("../img/peru5.jpg"); }
+  60%  { background-image: url("../img/peru6.jpg"); }
+  72%  { background-image: url("../img/peru10.jpg"); }
+  84%  { background-image: url("../img/peru11.jpg"); }
+  100% { background-image: url("../img/peru1.jpg"); }
 }
 
 /* footer*/
