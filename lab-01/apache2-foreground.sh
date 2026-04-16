@@ -1,3 +1,4 @@
+#!/bin/bash
 echo " Contenedor corriendo en puerto 80"
 
 # Para que Apache encuentre sus propias variables
