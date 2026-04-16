@@ -251,12 +251,12 @@ footer {
   font-size: 14px;
 }
 /*titulo de la parte central inferios*/
-#titulo-inferior {
+.titulo-inferior {
   text-align: center;
   margin: 40px 0 20px 0;
   color: #444;
 }
-#subtitulo-inferior {
+.subtitulo-inferior {
   text-align: center;
   margin: 0 0 40px 0;
   color: #060606;
