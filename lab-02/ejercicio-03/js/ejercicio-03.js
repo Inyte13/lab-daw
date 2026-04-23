@@ -1,4 +1,3 @@
-
 const mensaje = document.createElement("h1");
 mensaje.innerText = "Juego del Ahorcado";
 document.body.appendChild(mensaje);
@@ -16,8 +15,6 @@ const ctx = canvas.getContext("2d");
 
 const pPalabra = document.createElement("p");
 pPalabra.id = "palabra";
-pPalabra.style.fontSize = "2rem";
-pPalabra.style.letterSpacing = "5px";
 document.body.appendChild(pPalabra);
 
 const contenedorLetras = document.createElement("div");
@@ -29,7 +26,7 @@ const palabras = ["AREQUIPA", "MISTI", "CHACHANI", "PAMPACOLCA"];
 let palabra = "";
 let oculta = [];
 let errores = 0;
-let maxErrores = 6; 
+let maxErrores = 10; // ahora son 10 errores
 
 function iniciarJuego() {
   palabra = palabras[Math.floor(Math.random() * palabras.length)];
@@ -37,8 +34,7 @@ function iniciarJuego() {
   errores = 0;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  dibujarHorca(); 
-  
+
   pPalabra.innerText = oculta.join(" ");
   generarBotones();
 }
@@ -65,7 +61,7 @@ function manejarLetra(letra, btn) {
     }
   } else {
     errores++;
-    dibujarPersonaje(errores);
+    dibujar(errores);
   }
 
   pPalabra.innerText = oculta.join(" ");
@@ -87,51 +83,50 @@ function deshabilitarBotones() {
   botones.forEach(b => b.disabled = true);
 }
 
-
-
-function dibujarHorca() {
-  ctx.lineWidth = 4;
-  ctx.strokeStyle = "#333";
-  
-  ctx.strokeRect(10, 230, 180, 2); 
-  
-  ctx.beginPath();
-  ctx.moveTo(30, 230);
-  ctx.lineTo(30, 20);
-  
-  ctx.lineTo(150, 20);
-  
-  ctx.lineTo(150, 50);
-  ctx.stroke();
-}
-
-function dibujarPersonaje(paso) {
+// Dibujo paso a paso (10 errores)
+function dibujar(paso) {
   ctx.lineWidth = 3;
-  ctx.beginPath();
+
   switch (paso) {
-    case 1: 
-      ctx.arc(150, 70, 20, 0, Math.PI * 2);
-      break;
-    case 2: 
-      ctx.moveTo(150, 90);
-      ctx.lineTo(150, 160);
-      break;
-    case 3: 
-      ctx.moveTo(150, 110);
-      ctx.lineTo(120, 140);
-      break;
-    case 4: 
-      ctx.moveTo(150, 110);
-      ctx.lineTo(180, 140);
-      break;
-    case 5: 
-      ctx.moveTo(150, 160);
-      ctx.lineTo(120, 200);
-      break;
-    case 6: 
-      ctx.moveTo(150, 160);
-      ctx.lineTo(180, 200);
-      break;
+    case 1: ctx.fillRect(10, 230, 180, 5); break; // base
+    case 2: ctx.fillRect(30, 50, 5, 180); break; // poste vertical
+    case 3: ctx.fillRect(30, 50, 120, 5); break; // poste horizontal
+    case 4: ctx.fillRect(150, 50, 5, 20); break; // cuerda
+
+    case 5:
+      ctx.beginPath();
+      ctx.arc(152, 80, 12, 0, Math.PI * 2);
+      ctx.stroke();
+      break; // cabeza
+
+    case 6: ctx.fillRect(150, 92, 4, 40); break; // cuerpo
+
+    case 7:
+      ctx.beginPath();
+      ctx.moveTo(152, 100);
+      ctx.lineTo(130, 120);
+      ctx.stroke();
+      break; // brazo izq
+
+    case 8:
+      ctx.beginPath();
+      ctx.moveTo(152, 100);
+      ctx.lineTo(175, 120);
+      ctx.stroke();
+      break; // brazo der
+
+    case 9:
+      ctx.beginPath();
+      ctx.moveTo(152, 130);
+      ctx.lineTo(130, 170);
+      ctx.stroke();
+      break; // pierna izq
+
+    case 10:
+      ctx.beginPath();
+      ctx.moveTo(152, 130);
+      ctx.lineTo(175, 170);
+      ctx.stroke();
+      break; // pierna der
   }
-  ctx.stroke();
 }
