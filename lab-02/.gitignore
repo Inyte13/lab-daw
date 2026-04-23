@@ -1,0 +1,12 @@
+# Extensiones de sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+*.log
+
+# Archivos temporales de editores
+.vscode/
+.idea/
+''
