@@ -293,7 +293,7 @@ btnIngresar.onclick = () => {
         alert("Los datos no coinciden. Asegúrese de elegir el banco correcto para ese usuario.");
     }
 };
-
+// Mensaje de Ingreso
 function mostrarMensajeExito(nombreBanco) {
     document.body.innerHTML = "";
     
