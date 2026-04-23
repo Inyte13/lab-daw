@@ -1,8 +1,0 @@
-services:
-  nginx:
-    container_name: lab-02-nginx
-    build: .
-    ports:
-      - "8080:8080"
-    command: >
-      /bin/sh -c "echo '--- SERVIDOR LISTO EN: http://localhost:8080/lab-02/ejercicio-01/ejercicio-01.html ---' && nginx -g 'daemon off;'"

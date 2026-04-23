@@ -243,7 +243,7 @@ btnIngresar.style.border = "none";
 btnIngresar.style.fontWeight = "bold";
 btnIngresar.style.cursor = "pointer";
 
-// Base de Datos Simulación
+// Base de Datos Simulada
 
 const usuariosValidos = [
     { 
@@ -259,6 +259,8 @@ const usuariosValidos = [
         banco: "BCP" 
     }
 ];
+
+// Validadores
 
 const textosCaptcha = ["WR4FK", "99B2A", "PX7QR"];
 
