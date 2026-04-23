@@ -1,4 +1,4 @@
-// --- CONFIGURACIÓN DE UI ---
+
 const mensaje = document.createElement("h1");
 mensaje.innerText = "Juego del Ahorcado";
 document.body.appendChild(mensaje);
@@ -24,14 +24,12 @@ const contenedorLetras = document.createElement("div");
 contenedorLetras.id = "letras";
 document.body.appendChild(contenedorLetras);
 
-// --- VARIABLES DEL JUEGO ---
+// datos del juego
 const palabras = ["AREQUIPA", "MISTI", "CHACHANI", "PAMPACOLCA"];
 let palabra = "";
 let oculta = [];
 let errores = 0;
-let maxErrores = 6; // Ajustado a las partes del cuerpo humano (sin contar la horca inicial)
-
-// --- LÓGICA PRINCIPAL ---
+let maxErrores = 6; 
 
 function iniciarJuego() {
   palabra = palabras[Math.floor(Math.random() * palabras.length)];
@@ -39,7 +37,7 @@ function iniciarJuego() {
   errores = 0;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  dibujarHorca(); // Dibujamos la estructura desde el inicio
+  dibujarHorca(); 
   
   pPalabra.innerText = oculta.join(" ");
   generarBotones();
@@ -77,7 +75,7 @@ function manejarLetra(letra, btn) {
 function verificar() {
   if (!oculta.includes("_")) {
     deshabilitarBotones();
-    setTimeout(() => alert("¡Ganaste! 🎉"), 100);
+    setTimeout(() => alert("¡Ganaste!"), 100);
   } else if (errores >= maxErrores) {
     deshabilitarBotones();
     setTimeout(() => alert("Perdiste. La palabra era: " + palabra), 100);
@@ -89,20 +87,20 @@ function deshabilitarBotones() {
   botones.forEach(b => b.disabled = true);
 }
 
-// --- DIBUJO EN CANVAS ---
+
 
 function dibujarHorca() {
   ctx.lineWidth = 4;
   ctx.strokeStyle = "#333";
-  // Base
+  
   ctx.strokeRect(10, 230, 180, 2); 
-  // Poste vertical
+  
   ctx.beginPath();
   ctx.moveTo(30, 230);
   ctx.lineTo(30, 20);
-  // Poste horizontal
+  
   ctx.lineTo(150, 20);
-  // Cuerda
+  
   ctx.lineTo(150, 50);
   ctx.stroke();
 }
@@ -111,26 +109,26 @@ function dibujarPersonaje(paso) {
   ctx.lineWidth = 3;
   ctx.beginPath();
   switch (paso) {
-    case 1: // Cabeza
+    case 1: 
       ctx.arc(150, 70, 20, 0, Math.PI * 2);
       break;
-    case 2: // Cuerpo
+    case 2: 
       ctx.moveTo(150, 90);
       ctx.lineTo(150, 160);
       break;
-    case 3: // Brazo izq
+    case 3: 
       ctx.moveTo(150, 110);
       ctx.lineTo(120, 140);
       break;
-    case 4: // Brazo der
+    case 4: 
       ctx.moveTo(150, 110);
       ctx.lineTo(180, 140);
       break;
-    case 5: // Pierna izq
+    case 5: 
       ctx.moveTo(150, 160);
       ctx.lineTo(120, 200);
       break;
-    case 6: // Pierna der
+    case 6: 
       ctx.moveTo(150, 160);
       ctx.lineTo(180, 200);
       break;
