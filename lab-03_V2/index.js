@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 const AGENDA_DIR = path.join(__dirname, 'agenda');
 
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +15,7 @@ if (!fs.existsSync(AGENDA_DIR)) {
 }
 
 // Home - interfaz única
-app.get('/', (req, res) => {
+app.get('/lab03', (req, res) => {
     const fechas = fs.readdirSync(AGENDA_DIR);
 
     let html = `
@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 <h1>Agenda Personal</h1>
 
 <h2>Crear Evento</h2>
-<form method="POST" action="/crear">
+<form method="POST" action="/lab03/crear">
     Fecha: <input type="date" name="fecha" required><br>
     Hora: <input type="time" name="hora" required><br>
     <textarea name="contenido"></textarea><br>
@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
 });
 
 // Crear evento
-app.post('/crear', (req, res) => {
+app.post('/lab03/crear', (req, res) => {
     const { fecha, hora, contenido } = req.body;
 
     const fechaDir = fecha.replace(/-/g, '.');
@@ -71,9 +71,9 @@ app.post('/crear', (req, res) => {
 
     fs.writeFileSync(path.join(rutaFecha, horaFile), contenido);
 
-    res.redirect('/');
+    res.redirect('/lab03');
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor en http://localhost:${PORT}`);
+    console.log(`Servidor en http://localhost:${PORT}/lab03`);
 });
