@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Eventos</title>
+  <link rel="stylesheet" href="./src/styles/index.css">
+  <link rel="stylesheet" href="./src/styles/dia.css">
+  <link rel="stylesheet" href="./src/styles/bloque.css">
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <h2>Crear evento</h2>
+      <form>
+        <!-- Para saber cuando cambiar entre crear y actualizar -->
+        <input type="hidden" id="edit-mode" value="false">
+        <!-- Para llamar al backend usamos la fecha u hora que cambiamos entonces tenemos que guardar la anterior a cambiar -->
+        <input type="hidden" id="fecha-original" value="">
+        <input type="hidden" id="hora-original" value="">
+        
+        <div class="form-group">
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" required>
+        </div>
+        <div class="form-group">
+          <label for="hora">Hora</label>
+          <input type="time" id="hora" required>
+        </div>
+        <div class="form-group">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" rows="4" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" id="btn-submit">Guardar</button>
+          <button type="button" id="btn-cancel">Cancelar</button>
+        </div>
+      </form>
+    </aside>
+
+    <main>
+      <header>
+        <h2>Eventos programados</h2>
+      </header>
+      <div id="dias-container"></div>
+      <button id="btn-create">Crear</button>
+    </main>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
