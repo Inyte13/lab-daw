@@ -19,18 +19,24 @@ app.get('/', (req, res) => {
     const fechas = fs.readdirSync(AGENDA_DIR);
 
     let html = `
-    <h1>Agenda Personal</h1>
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
 
-    <h2>Crear Evento</h2>
-    <form method="POST" action="/crear">
-        Fecha: <input type="date" name="fecha" required><br>
-        Hora: <input type="time" name="hora" required><br>
-        Descripción:<br>
-        <textarea name="contenido" required></textarea><br>
-        <button type="submit">Guardar</button>
-    </form>
+<h1>Agenda Personal</h1>
 
-    <h2>Eventos</h2>
+<h2>Crear Evento</h2>
+<form method="POST" action="/crear">
+    Fecha: <input type="date" name="fecha" required><br>
+    Hora: <input type="time" name="hora" required><br>
+    <textarea name="contenido"></textarea><br>
+    <button>Guardar</button>
+</form>
     `;
 
     fechas.forEach(fecha => {
