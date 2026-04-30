@@ -111,6 +111,8 @@ docker-compose up -d --build
     *   **Respuestas:** `204 No Content` (Éxito sin body), `404 Not Found`.
 
 ---
+## Video Demostrativo
+URL: https://drive.google.com/file/d/1WZ39xT4fCG1_OzJ2IaJ_XHtbFhufOzrB/view?usp=sharing
 
 ## Decisiones Técnicas Destacadas
 *   **Web Components & Custom Events:** En lugar de usar event delegation excesivo en el `main.js`, cada bloque dispara un `CustomEvent` con `bubbles: true` y `composed: true`, promoviendo una excelente encapsulación.
